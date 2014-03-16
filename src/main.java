@@ -16,7 +16,7 @@ public class main {
 	public static void main(String[] args) {
 		window = new Window();
 		writer = new DataWriter();
-		writer.write("text.txt", new String[]{"hello", "goodbye"});
+		writer.write("text.txt", DataWriter.matchLabelWithField(window.getContentPanes()[0]));
 	}
 	
 }

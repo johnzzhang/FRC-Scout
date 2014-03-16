@@ -1,5 +1,7 @@
 package data;
 
+import gui.ContentPane;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -16,6 +18,14 @@ import java.io.Writer;
  */
 
 public class DataWriter {
+	
+	public static String[] matchLabelWithField(ContentPane pane) {
+		String[] matchedData = new String[pane.getLabels().length];
+		for(int i = 0; i < pane.getLabels().length; i++) {
+			matchedData[i] = pane.getLabels()[i] + " : " + pane.getFields()[i];
+		}
+		return matchedData;
+	}
 	
 	public void write(String filePath, String[] data) {
 	    try {
