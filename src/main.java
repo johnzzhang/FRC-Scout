@@ -11,12 +11,9 @@ import gui.Window;
 public class main {
 	
 	static Window window;
-	static DataWriter writer;
 	
 	public static void main(String[] args) {
 		window = new Window();
-		writer = new DataWriter();
-		writer.write("text.txt", DataWriter.matchLabelWithField(window.getContentPanes()[0]));
 	}
 	
 }

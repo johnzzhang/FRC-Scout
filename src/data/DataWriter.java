@@ -4,9 +4,8 @@ import gui.ContentPane;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.Writer;
 
 /**
@@ -30,13 +29,13 @@ public class DataWriter {
 	public void write(String filePath, String[] data) {
 	    try {
 	        File file = new File(filePath);
-	        FileOutputStream is = new FileOutputStream(file);
-	        OutputStreamWriter osw = new OutputStreamWriter(is);    
-	        Writer w = new BufferedWriter(osw);
+	        FileWriter fw = new FileWriter(file, true);    
+	        Writer w = new BufferedWriter(fw);
 	        for(String datum : data) {
 	        	w.write(datum);
 	        	w.write(" , ");
 	        }
+	        ((BufferedWriter) w).newLine();
 	        w.close();
 	    } catch (IOException e) {
 	        System.err.println("Problem writing to the file.");
