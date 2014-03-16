@@ -1,3 +1,4 @@
+import data.DataWriter;
 import gui.Window;
 
 /**
@@ -10,9 +11,12 @@ import gui.Window;
 public class main {
 	
 	static Window window;
+	static DataWriter writer;
 	
 	public static void main(String[] args) {
 		window = new Window();
+		writer = new DataWriter();
+		writer.write("text.txt", new String[]{"hello", "goodbye"});
 	}
 	
 }
